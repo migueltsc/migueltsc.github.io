@@ -1,18 +1,213 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
-    <meta name="description" content="without the intention of anything">
-    <meta name="keywords" content="HTML, CSS, JavaScript">
-    <meta name="author" content="John Doe">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Gnomo.net: The mushroom squats => the Home</title>
+    <title>Gnomo.net | Hidden Wisdom, Obvious Solutions</title>
+    
+    <!-- Enlace a una fuente de Google Fonts para un look moderno (ej. Inter) -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;700&display=swap" rel="stylesheet">
+
+    <style>
+        /* CSS Básico para un diseño minimalista, moderno y con tema oscuro */
+        :root {
+            /* Colores de tu paleta */
+            --bg-dark: #1b1b1a;         /* El negro/gris muy oscuro, para fondos principales */
+            --text-light: #dfdfdf;      /* El gris muy claro, para texto y elementos principales */
+            --grey-medium-light: #b2b2b1;
+            --grey-medium-dark: #858584;
+            --grey-darkest: #595957;    /* Un gris más oscuro para detalles o hover */
+
+            /* Colores específicos de la UI (basados en la paleta) */
+            --header-border-color: var(--grey-darkest); /* Para una línea sutil bajo el header */
+            --cta-button-border: var(--text-light);     /* Borde y texto del botón CTA */
+            --cta-button-hover-bg: var(--grey-darkest); /* Fondo del botón CTA al pasar el ratón */
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            margin: 0;
+            padding: 0;
+            line-height: 1.6;
+            color: var(--text-light); /* Color de texto claro sobre fondo oscuro */
+            background-color: var(--bg-dark); /* Fondo oscuro principal */
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+        }
+
+        /* Contenedor principal para centrar el contenido */
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        /* Header */
+        header {
+            background-color: var(--bg-dark);
+            padding: 20px 0;
+            border-bottom: 1px solid var(--header-border-color); /* Borde sutil */
+            text-align: center;
+        }
+
+        .logo {
+            font-size: 1.8em;
+            font-weight: 700;
+            color: var(--text-light); /* Logo y texto del header claros */
+            text-decoration: none;
+            display: inline-flex; /* Permite alinear el SVG y el texto si lo usas */
+            align-items: center;
+        }
+
+        .logo-icon {
+            /* Estilos para tu ícono de hongo SVG si lo añades */
+            height: 1.2em; /* Ajusta el tamaño del icono */
+            width: auto;
+            margin-right: 10px; /* Espacio entre el icono y el texto */
+            vertical-align: middle;
+            fill: var(--text-light); /* Asegura que el SVG sea del color de texto */
+        }
+
+        /* Hero Section */
+        .hero {
+            flex-grow: 1;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            padding: 80px 20px;
+            background-color: var(--bg-dark); /* Fondo principal oscuro */
+        }
+
+        .hero h1 {
+            font-size: 3em;
+            color: var(--text-light); /* Título principal claro */
+            margin-bottom: 15px;
+            line-height: 1.1;
+            max-width: 800px;
+        }
+
+        .hero p.slogan {
+            font-size: 1.5em;
+            color: var(--grey-medium-light); /* Eslogan en un tono de gris más suave */
+            margin-bottom: 40px;
+            max-width: 600px;
+            font-weight: 300;
+        }
+
+        .cta-button {
+            display: inline-block;
+            background-color: transparent; /* Botón "ghost" */
+            color: var(--cta-button-border);
+            border: 2px solid var(--cta-button-border);
+            padding: 15px 30px;
+            text-decoration: none;
+            border-radius: 5px;
+            font-size: 1.2em;
+            font-weight: 700;
+            transition: all 0.3s ease; /* Transición suave para hover */
+        }
+
+        .cta-button:hover {
+            background-color: var(--cta-button-hover-bg); /* Fondo al pasar el ratón */
+            color: var(--text-light); /* Asegura que el texto siga siendo legible */
+        }
+
+        /* Footer */
+        footer {
+            background-color: var(--bg-dark);
+            color: var(--grey-medium-light); /* Texto del footer en un gris más suave */
+            text-align: center;
+            padding: 20px 0;
+            font-size: 0.9em;
+            border-top: 1px solid var(--header-border-color); /* Borde sutil */
+        }
+
+        footer p {
+            margin: 5px 0;
+        }
+
+        footer a {
+            color: var(--grey-medium-light);
+            text-decoration: none;
+            margin: 0 10px;
+        }
+
+        footer a:hover {
+            text-decoration: underline;
+        }
+
+        /* Media Queries para Responsive Design */
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 2.2em;
+            }
+            .hero p.slogan {
+                font-size: 1.2em;
+            }
+            .cta-button {
+                padding: 12px 25px;
+                font-size: 1em;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .hero h1 {
+                font-size: 1.8em;
+            }
+            .hero p.slogan {
+                font-size: 1em;
+            }
+            .logo {
+                font-size: 1.5em;
+            }
+            .logo-icon {
+                height: 1em;
+            }
+        }
+    </style>
 </head>
-
 <body>
-    <h1>"Gnomo.net hosted in github"</h1>
-    <p>Retomando rutas abandonadas...</p>
-</body>
+    <header>
+        <div class="container">
+            <a href="#" class="logo">
+                <!-- Aquí puedes pegar tu SVG del hongo si quieres, justo antes del texto -->
+                <!-- Por ejemplo: -->
+                <!-- <svg class="logo-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8zm-1-14h2v6h-2zm0 8h2v2h-2z"/></svg> -->
+                Gnomo.net
+            </a>
+        </div>
+    </header>
 
+    <main class="hero">
+        <div class="container">
+            <h1>Gnomo.net: Building Your Digital Future.</h1>
+            <p class="slogan">Hidden wisdom, obvious solutions.</p>
+            <a href="#contact" class="cta-button">Let's Connect</a>
+            
+            <!-- Pequeña sección opcional para dar más contexto, muy breve -->
+            <!-- Puedes descomentarla si quieres añadirla -->
+            <!--
+            <div style="margin-top: 50px; max-width: 700px; font-size: 1.1em; color: var(--grey-medium-light);">
+                <p>With decades of experience at the forefront of web and software development, we transform complex challenges into seamless digital experiences.</p>
+            </div>
+            -->
+        </div>
+    </main>
+
+    <footer id="contact">
+        <div class="container">
+            <p>© 2025 Gnomo.net. All rights reserved.</p>
+            <p>
+                <a href="mailto:info@gnomo.net">info@gnomo.net</a> | 
+                <a href="#">Privacy Policy</a>
+                <!-- Añade enlaces a tus redes sociales si aplica -->
+            </p>
+        </div>
+    </footer>
+</body>
 </html>
